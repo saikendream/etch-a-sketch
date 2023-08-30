@@ -20,9 +20,19 @@ for(let i=0; i < slider.value; i++) {
     for(let i=0; i < slider.value; i++) {
         const pixel = document.createElement('div');
         pixel.classList.add('pixel');
+        pixel.addEventListener('mousedown', painting);
     
         row.appendChild(pixel);
     }
+}
+
+// Pixel Painting
+
+let colour = "black";
+
+function painting(e) {
+    console.log(e);
+    e.target.style.backgroundColor = colour;
 }
 
 // Buttons
