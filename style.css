@@ -1,0 +1,108 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #E5E4E2;
+    width: 100%;
+}
+
+/* TOOLBAR */
+
+.controls {
+    transition: all .4s;
+    display: flex;
+    background-color: white;
+    width: 85%;
+    padding: 25px 35px;
+    border-radius: 35px;
+    opacity: .3;
+    position: fixed;
+    bottom: 0;
+    margin: 25px auto;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 5px #555555, 0 0 5px #555555;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.controls:hover {
+    transition: all .4s;
+    opacity: 1;
+    border: 1px solid #555555;
+    box-shadow: none;
+}
+
+#colourSelector {
+    transition: all .4s;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#colourSelector:hover {
+    transition: all .4s;
+    border: 1px solid #2A3439;
+    box-shadow: 0 0 5px #555555;
+}
+
+.button {
+    transition: all .4s;
+    border: 1px solid #F5F5F5;
+    border-radius: 15px;
+    padding: 15px 25px;
+    cursor: pointer;
+    margin: 0 25px;
+}
+
+.button:hover {
+    transition: all .4s;
+    border: 1px solid #2A3439;
+    box-shadow: 0 0 5px #555555;
+}
+
+.active {
+    background: #2A3439;
+    color: white;
+}
+
+#sliderValue {
+    text-align: center;
+}
+
+/* CANVAS */
+
+#body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+#canvas {
+    background: white;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* PIXELS */
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.pixel {
+    transition: all .2s;
+    width: 100%;
+    height: 100%;
+}
+
+.pixel:hover {
+    transition: all .2s;
+    box-shadow: 0 0 3px #C0C0C0;
+}

@@ -12,12 +12,24 @@
 </head>
 <body>
     <div class="controls">
+        <div id="colourSelector" style="background-color: black;"></div>
+        <div id="pencilBtn" class="button active">
+            <i class="fa-solid fa-pencil"></i>
+        </div>
+        <div id="rubberBtn" class="button">
+            <i class="fa-solid fa-eraser"></i>
+        </div>
+        <div id="clearBtn" class="button">
+            CLEAR
+        </div>
         <div id="canvasSlider">
             <div id="sliderValue"></div>
             <input type="range" min="8" max="100" value="16" step="4" class="slider" id="canvasSize">
         </div>
     </div>
-    <div class="canvas"></div>
+    <div id="body">
+        <div id="canvas"></div>
+    </div>
     <script src="script.js" defer></script>
 </body>
 </html>
