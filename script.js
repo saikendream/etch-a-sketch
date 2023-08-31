@@ -9,7 +9,7 @@ const coloursList = ["black", "firebrick", "orange", "mediumseagreen", "greenyel
 
 const colourBtn = document.querySelector("#colourSelector");
 colourBtn.onclick = () => {
-    if(currentColour === coloursList.length) {
+    if(currentColour === (coloursList.length - 1)) {
         currentColour = 0;
     } else { currentColour++; };
     colourBtn.style.backgroundColor = coloursList[currentColour];
