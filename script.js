@@ -1,3 +1,20 @@
+let currentColour = 0;
+let currentTool = 1;
+
+// Buttons
+
+// Colour Selector
+
+const coloursList = ["black", "firebrick", "gold", "mediumseagreen", "greenyellow", "lightseagreen", "cornflowerblue"];
+
+const colourBtn = document.querySelector("#colourSelector");
+colourBtn.onclick = () => {
+    if(currentColour === coloursList.length) {
+        currentColour = 0;
+    } else { currentColour++; };
+    colourBtn.style.backgroundColor = coloursList[currentColour];
+}
+
 // Captures SLIDER value
 
 const slider = document.getElementById("canvasSize");
@@ -26,15 +43,13 @@ for(let i=0; i < currentSize; i++) {
     
         row.appendChild(pixel);
     }
-}
+};
 
 // Pixel Painting
 
-let colour = "black";
-
 function painting(e) {
     console.log(e);
-    e.target.style.backgroundColor = colour;
+    e.target.style.backgroundColor = coloursList[currentColour];
 }
 
-// Buttons
+
