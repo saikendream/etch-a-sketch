@@ -6,6 +6,7 @@ let currentTool = 1;
 const colourBtn = document.querySelector("#colourSelector");
 const pencilBtn = document.querySelector("#pencilBtn");
 const rubberBtn = document.querySelector("#rubberBtn");
+const clearBtn = document.querySelector("#clearBtn");
 
 // Colour Selector
 
@@ -23,14 +24,11 @@ colourBtn.onclick = () => {
 // Pencil
 
 pencilBtn.onclick = () => {
-    console.log("PENCIL CLICK");
     if(currentTool = 2) {
-        console.log(currentTool);
         currentTool = 1;
         rubberBtn.classList.remove("active");
         pencilBtn.classList.add("active");
     } else if(currentTool = 0) {
-        console.log(currentTool);
         currentTool = 1;
         pencilBtn.classList.add("active");
     } else if(currentTool = 1) { currentTool = 1; };
@@ -39,17 +37,28 @@ pencilBtn.onclick = () => {
 // Rubber
 
 rubberBtn.onclick = () => {
-    console.log("RUBBER CLICK");
     if(currentTool = 1) {
-        console.log(currentTool);
         currentTool = 2;
         rubberBtn.classList.add("active");
         pencilBtn.classList.remove("active");
     } else if(currentTool = 0) {
-        console.log(currentTool);
         currentTool = 2;
         rubberBtn.classList.add("active");
-    } else if(currentTool = 2) { console.log(currentTool); currentTool = 2; };
+    } else if(currentTool = 2) { currentTool = 2; };
+}
+
+// Clear All
+
+clearBtn.onclick = () => {
+    clearBtn.classList.add("active");
+    setTimeout(() => {
+        clearBtn.classList.remove("active");
+    }, 500);
+    const canvasPixels = document.querySelectorAll(".pixel");
+    let pixels = canvasPixels.length;
+    for(let i = 0; i < pixels; i++) {
+        canvasPixels[i].style.backgroundColor = "white";
+    };
 }
 
 // Captures SLIDER value
@@ -76,6 +85,7 @@ for(let i=0; i < currentSize; i++) {
     for(let i=0; i < slider.value; i++) {
         const pixel = document.createElement('div');
         pixel.classList.add('pixel');
+        pixel.style.backgroundColor = "white";
         pixel.addEventListener('mousedown', painting);
     
         row.appendChild(pixel);
@@ -86,10 +96,8 @@ for(let i=0; i < currentSize; i++) {
 
 function painting(e) {
     if(currentTool == 1) {
-        console.log(e);
         e.target.style.backgroundColor = coloursList[currentColour];
     } if(currentTool == 2) {
-        console.log(e);
         e.target.style.backgroundColor = "white";
     }
     
