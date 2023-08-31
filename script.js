@@ -5,7 +5,7 @@ let currentTool = 1;
 
 // Colour Selector
 
-const coloursList = ["black", "firebrick", "gold", "mediumseagreen", "greenyellow", "lightseagreen", "cornflowerblue"];
+const coloursList = ["black", "firebrick", "orange", "mediumseagreen", "greenyellow", "lightseagreen", "cornflowerblue", "slateblue", "darkviolet", "deeppink", "saddlebrown", "gainsboro", "darkgray", "goldenrod", "pink", "darkorchid", "mediumslateblue", "cyan", "navy", "teal", "limegreen", "gold", "tomato"];
 
 const colourBtn = document.querySelector("#colourSelector");
 colourBtn.onclick = () => {
