@@ -72,25 +72,31 @@ let currentSize = slider.value;
 slider.oninput = function() {
     currentSize = this.value;
     output.innerHTML = this.value;
+    canvas.innerHTML = '';
+    canvasGen();
 };
 
 // Canvas Generator
 
-const canvas = document.querySelector("#canvas"); 
-for(let i=0; i < currentSize; i++) {
-    const row = document.createElement('div');
-    row.classList.add('row');
+function canvasGen() {
+    const canvas = document.querySelector("#canvas"); 
+    for(let i=0; i < currentSize; i++) {
+        const row = document.createElement('div');
+        row.classList.add('row');
 
-    canvas.appendChild(row);
-    for(let i=0; i < slider.value; i++) {
-        const pixel = document.createElement('div');
-        pixel.classList.add('pixel');
-        pixel.style.backgroundColor = "white";
-        pixel.addEventListener('mousedown', painting);
+        canvas.appendChild(row);
+        for(let i=0; i < slider.value; i++) {
+            const pixel = document.createElement('div');
+            pixel.classList.add('pixel');
+            pixel.style.backgroundColor = "white";
+            pixel.addEventListener('mousedown', painting);
     
-        row.appendChild(pixel);
-    }
+            row.appendChild(pixel);
+        }
+    };
 };
+
+canvasGen();
 
 // Pixel Painting
 
