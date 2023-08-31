@@ -3,16 +3,53 @@ let currentTool = 1;
 
 // Buttons
 
+const colourBtn = document.querySelector("#colourSelector");
+const pencilBtn = document.querySelector("#pencilBtn");
+const rubberBtn = document.querySelector("#rubberBtn");
+
 // Colour Selector
 
 const coloursList = ["black", "firebrick", "orange", "mediumseagreen", "greenyellow", "lightseagreen", "cornflowerblue", "slateblue", "darkviolet", "deeppink", "saddlebrown", "gainsboro", "darkgray", "goldenrod", "pink", "darkorchid", "mediumslateblue", "cyan", "navy", "teal", "limegreen", "gold", "tomato"];
 
-const colourBtn = document.querySelector("#colourSelector");
 colourBtn.onclick = () => {
-    if(currentColour === (coloursList.length - 1)) {
-        currentColour = 0;
-    } else { currentColour++; };
-    colourBtn.style.backgroundColor = coloursList[currentColour];
+    if(currentTool === 1) { 
+        if(currentColour === (coloursList.length - 1)) {
+            currentColour = 0;
+        } else { currentColour++; };
+        colourBtn.style.backgroundColor = coloursList[currentColour];
+    };
+}
+
+// Pencil
+
+pencilBtn.onclick = () => {
+    console.log("PENCIL CLICK");
+    if(currentTool = 2) {
+        console.log(currentTool);
+        currentTool = 1;
+        rubberBtn.classList.remove("active");
+        pencilBtn.classList.add("active");
+    } else if(currentTool = 0) {
+        console.log(currentTool);
+        currentTool = 1;
+        pencilBtn.classList.add("active");
+    } else if(currentTool = 1) { currentTool = 1; };
+}
+
+// Rubber
+
+rubberBtn.onclick = () => {
+    console.log("RUBBER CLICK");
+    if(currentTool = 1) {
+        console.log(currentTool);
+        currentTool = 2;
+        rubberBtn.classList.add("active");
+        pencilBtn.classList.remove("active");
+    } else if(currentTool = 0) {
+        console.log(currentTool);
+        currentTool = 2;
+        rubberBtn.classList.add("active");
+    } else if(currentTool = 2) { console.log(currentTool); currentTool = 2; };
 }
 
 // Captures SLIDER value
@@ -48,8 +85,14 @@ for(let i=0; i < currentSize; i++) {
 // Pixel Painting
 
 function painting(e) {
-    console.log(e);
-    e.target.style.backgroundColor = coloursList[currentColour];
+    if(currentTool == 1) {
+        console.log(e);
+        e.target.style.backgroundColor = coloursList[currentColour];
+    } if(currentTool == 2) {
+        console.log(e);
+        e.target.style.backgroundColor = "white";
+    }
+    
 }
 
 
